@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+</head>
+<body>	
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/ViewDataClient">View DataClient</a></li>
+				<li><a href="/ViewCars">View Cars</a></li>
+				<li><a href="/ViewStudents">View Students</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div ng-view></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.min.js"></script>
+	<script>
+		var app = angular.module('app', ['ngRoute']);
+		app.config(['$routeProvider', '$locationProvider', appConfig]);
+
+		function appConfig ($routeProvider, $locationProvider) {
+			$locationProvider.html5Mode(true);
+
+			$routeProvider
+				.when('/', { templateUrl: 'views/home.html' })
+				.when('/ViewDataClient', { templateUrl: 'views/dataClientView.html' })
+				.when('/ViewCars', { templateUrl: 'views/dataClientView.html' })
+				.when('/ViewStudents', { templateUrl: 'views/dataClientView.html' })
+				.otherwise({ redirectTo: '/'});
+		}
+	</script>
+	<script src="controllers/dataClientController.js"></script>
+</body>
+</html>

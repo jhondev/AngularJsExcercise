@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>index</title>
+</head>
+<body>
+	
+	<ul>
+		<li><a href="#/">Home</a></li>
+		<li><a href="#/view2">Vista 2</a></li>
+		<li><a href="#/clientes1">Clientes</a></li>
+		<li><a href="#/xftg">xftg</a></li>
+		<li><a href=""></a>Sin asignar</li>
+	</ul>
+
+	<div ng-view></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.min.js"></script>
+
+	<script>
+		var appModule = angular.module('app', ['ngRoute']);
+
+		appModule.config(['$routeProvider', configurationApp]);
+
+		function configurationApp ($routeProvider) {
+			$routeProvider
+			.when('/', { templateUrl: '/views/view1.html' })
+			.when('/view2', { templateUrl: '/views/view2.html' })
+			.when('/clientes1', { templateUrl: '/views/clientes1.html' })
+			.otherwise({ redirectTo: '/' });
+		}
+	</script>
+
+	<script src="services/clientService.js"></script>
+
+	<script src="controllers/dataClientsController.js"></script>
+	<script src="controllers/vista2.controller.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div ng-controller="dataClientController">
+	<ul>
+		<li ng-repeat="item in data">
+			<span ng-bind="item.name"></span>
+			<span ng-bind="item.last_name"></span>
+		</li>
+	</ul>
+
+	<input type="button" ng-click="getClientData()" value="get client data">
+</div>

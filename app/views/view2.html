@@ -1,0 +1,10 @@
+<div ng-controller="vista2 as ctrl1">
+	<ul>			
+		<li ng-repeat="client in ctrl1.dataResult | filter:filterName | orderBy: 'last_name'">
+
+			<span ng-bind="client.name"></span>
+			<span ng-bind="client.last_name"></span>
+
+		</li>
+	</ul>
+</div>

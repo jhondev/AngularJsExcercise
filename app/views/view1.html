@@ -1,0 +1,13 @@
+<div ng-controller="dataClientsController">
+	<input type="text" ng-model="filterName">
+	<ul>			
+		<li ng-repeat="client in dataClient | filter:filterName | orderBy: 'last_name'">
+
+			<span ng-bind="client.name"></span>
+			<span ng-bind="client.last_name"></span>
+
+		</li>
+	</ul>
+
+	<input type="button" value="change Data" ng-click="changeData()">
+</div>
