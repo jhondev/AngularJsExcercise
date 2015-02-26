@@ -14,6 +14,6 @@
 		var result = clientService.GetDataClient().then(function (data) {
 			vm.dataResult = data;
 		});		
-
+		
 	}
 })();
